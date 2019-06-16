@@ -107,6 +107,7 @@ button {
     border-style: none;
     box-shadow: 0 8px 6px 0 hsl(223, 87%, 95%);
     flex: 1;
+    cursor: pointer;
 }
 
 img {
