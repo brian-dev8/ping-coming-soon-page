@@ -25,4 +25,8 @@ export class AppComponent implements OnInit{
   onSubmit() {
     console.log("Submitted: " + this.emailForm.value);
   }
+
+  clearEmail() {
+    this.emailForm.setValue({'emailAddr': ''});
+  }
 }
