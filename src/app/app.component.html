@@ -10,8 +10,13 @@
   <p class="flex-item">Subscribe and get notified</p>
 
   <div class="flex-item main__form">
-    <input class="text-input" type="text" value="Your email address..."/>
-    <button>Notify Me</button>
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+      <input class="text-input" type="text" formControlName="emailAddr"/>
+      <button type="submit">Notify Me</button>
+      <p class="main__form__validation">
+        Form Status: {{ emailForm.status }}
+      </p>
+    </form>
   </div>
 
   <div class="flex-item">

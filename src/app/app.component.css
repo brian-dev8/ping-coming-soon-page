@@ -110,6 +110,10 @@ button:focus {
     outline: none;
 }
 
+.main__form__validation {
+
+}
+
 img {
     display: block;
     margin-left: auto;
