@@ -10,8 +10,15 @@
   <p class="flex-item">Subscribe and get notified</p>
 
   <div class="flex-item main__form">
-    <input class="text-input" type="text" value="Your email address..."/>
-    <button>Notify Me</button>
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+      <input [ngClass]="textInputClass" type="text" (click)="clearEmail()" formControlName="emailAddr"/>
+      <button type="submit" (click)="emailValid()">Notify Me</button>
+      <div class="submit-error">
+        <p [ngClass]="hiddenErrorClass">
+          <i>Please provide a valid email address</i>
+        </p>
+      </div>
+    </form>
   </div>
 
   <div class="flex-item">
