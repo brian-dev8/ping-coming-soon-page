@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +11,18 @@ export class AppComponent implements OnInit{
   email = 'Your email address...';
   emailForm: FormGroup;
 
+  hiddenErrorClass = {
+    error_hidden: true
+  };
+
+  textInputClass = {
+    'text-input-error': false,
+    'text-input': true
+  };
+
   ngOnInit(): void {
     this.emailForm = new FormGroup({
-      'emailAddr': new FormControl(this.email, [
+      emailAddr: new FormControl(this.email, [
         Validators.required,
         Validators.email
       ])
@@ -23,10 +32,33 @@ export class AppComponent implements OnInit{
   get emailAddr() { return this.emailForm.get('emailAddr'); }
 
   onSubmit() {
-    console.log("Submitted: " + this.emailForm.value);
+    console.log('Submitted: ' + this.emailForm.value);
   }
 
   clearEmail() {
-    this.emailForm.setValue({'emailAddr': ''});
+    if (this.emailAddr.value === this.email) {
+      this.emailForm.setValue({emailAddr: ''});
+    }
+    this.hiddenErrorClassToggle(true);
   }
+
+  emailValid() {
+    if (!this.emailAddr.valid) {
+      this.hiddenErrorClassToggle(false);
+    } else {
+      this.hiddenErrorClassToggle(true);
+    }
+  }
+
+  hiddenErrorClassToggle(isHidden: boolean) {
+    this.hiddenErrorClass = {
+      error_hidden: isHidden
+    };
+
+    this.textInputClass = {
+      'text-input': true,
+      'text-input-error': !isHidden
+    };
+  }
+
 }
