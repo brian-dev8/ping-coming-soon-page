@@ -149,11 +149,24 @@ img {
 }
 
 .socials__icon {
-    border-radius: 50%;
-    border-color: hsl(0, 0%, 95%);
-    border-style: solid;
-    margin: 5px;
-    padding: 5px;
+  border-radius: 50%;
+  border-color: hsl(0, 0%, 95%);
+  border-style: solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.socials__icon svg {
+  fill: #4f7df3;
+  display: block;
+}
+
+.socials__icon svg:hover {
+    fill: #ffffff;
+}
+
+.socials__icon:hover {
+  background: #4f7df3;
 }
 
 .copyright {
@@ -163,8 +176,8 @@ img {
 
 .attribution {
     margin-top: 40px;
-    text-align: center; 
+    text-align: center;
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
