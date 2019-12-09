@@ -1,6 +1,6 @@
 # PingComingSoonPage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Development server
 
@@ -21,6 +21,17 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Updating
+#### View outdated packages
+`npm outdated`
+
+#### Update packages to latest versions
+`npm-upgrade check`
+which will update package.json, now install updates:
+`npm i`
+if version is not supported (`ng build` fails) may need to specify range:
+`npm install typescript@">=3.4 <3.6"`
 
 ## Further help
 
